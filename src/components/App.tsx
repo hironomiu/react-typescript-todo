@@ -5,7 +5,7 @@ import {
   ExitToApp as ExitToAppIcon,
 } from "@material-ui/icons"
 import TodoItem from "./TodoItem"
-import { db, auth } from "../firebase"
+import { db, auth } from "../utils/firebase"
 import { makeStyles } from "@material-ui/styles"
 import { useHistory, withRouter } from "react-router-dom"
 import { AuthContext } from "../contexts/auth"

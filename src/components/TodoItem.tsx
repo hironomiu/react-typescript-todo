@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { db } from "../firebase"
+import { db } from "../utils/firebase"
 import { ListItem, Grid, TextField, FormControl } from "@material-ui/core"
 import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined"
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined"

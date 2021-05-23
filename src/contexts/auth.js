@@ -1,5 +1,5 @@
 import { createContext, useState, useCallback, useEffect } from "react"
-import { auth, db, FirebaseTimestamp } from "../firebase"
+import { auth, db, FirebaseTimestamp } from "../utils/firebase"
 import { isValidEmailFormat, isValidRequiredInput } from "../utils/validation"
 
 const AuthContext = createContext()

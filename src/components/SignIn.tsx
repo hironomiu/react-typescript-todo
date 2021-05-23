@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react"
 import { makeStyles } from "@material-ui/styles"
 import { Button, FormControl, TextField, Typography } from "@material-ui/core"
-import { auth } from "../firebase"
+import { auth } from "../utils/firebase"
 import { useHistory, withRouter } from "react-router-dom"
 import { AuthContext } from "../contexts/auth"
 
