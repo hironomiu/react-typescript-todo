@@ -1,5 +1,7 @@
 # react-typescript-todo
 
+[![action](https://github.com/hironomiu/react-typescript-todo/actions/workflows/action.yml/badge.svg?branch=main)](https://github.com/hironomiu/react-typescript-todo/actions?query=workflow%3Aaction)
+
 ## setup
 
 ```
