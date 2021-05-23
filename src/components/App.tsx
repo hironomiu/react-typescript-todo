@@ -1,20 +1,14 @@
 import React, { useState, useEffect, useContext } from "react"
 import { FormControl, TextField, List, Grid } from "@material-ui/core"
-import AddToPhotoIcon from "@material-ui/icons/AddToPhotos"
-import ExitToAppIcon from "@material-ui/icons/ExitToApp"
+import {
+  AddToPhotos as AddToPhotoIcon,
+  ExitToApp as ExitToAppIcon,
+} from "@material-ui/icons"
 import TodoItem from "./TodoItem"
-import styles from "./App.module.css"
 import { db, auth } from "../firebase"
 import { makeStyles } from "@material-ui/styles"
 import { useHistory, withRouter } from "react-router-dom"
 import { AuthContext } from "../contexts/auth"
-
-const useStyle = makeStyles({
-  field: {
-    marginTop: 30,
-    marginBottom: 30,
-  },
-})
 
 const App: React.FC = () => {
   interface MyTodos {
@@ -100,22 +94,25 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className={styles.app__root}>
-      <h1>{profile?.nickname}'s ToDo App</h1>
-      <button
-        className={styles.app__logout}
-        onClick={async () => {
-          try {
-            await auth.signOut()
-            history.push("/signin")
-          } catch (error) {
-            alert(error.message)
-          }
-        }}
-      >
-        {" "}
-        <ExitToAppIcon />
-      </button>
+    // <div className={classes.app__root}>
+    <div className={classes.app__root}>
+      <h1 className={classes.app__title}>
+        {profile?.nickname}'s ToDo App
+        <button
+          className={classes.app__logout}
+          onClick={async () => {
+            try {
+              await auth.signOut()
+              history.push("/signin")
+            } catch (error) {
+              alert(error.message)
+            }
+          }}
+        >
+          {" "}
+          <ExitToAppIcon />
+        </button>
+      </h1>
       <br />
       <FormControl>
         <Grid container justify="flex-end">
@@ -147,7 +144,7 @@ const App: React.FC = () => {
       <button
         disabled={!title || !body}
         onClick={(e) => newTodo(e)}
-        className={styles.app__icon}
+        className={classes.app__entry_icon}
       >
         <AddToPhotoIcon />
       </button>
@@ -165,5 +162,48 @@ const App: React.FC = () => {
     </div>
   )
 }
+
+const useStyle = makeStyles({
+  field: {
+    marginTop: 30,
+    marginBottom: 30,
+  },
+  app__root: {
+    textAlign: "center",
+    color: "dimgray",
+    fontFamily: "serif",
+  },
+  app__title: {
+    display: "inline-block",
+  },
+  app__entry_icon: {
+    cursor: "pointer",
+    backgroundColor: "transparent",
+    border: "none",
+    outline: "none",
+    marginTop: "30px",
+    color: "dimgray",
+    "&:disabled": {
+      color: "#ccc",
+      cursor: "none",
+    },
+  },
+  app__icon: {
+    cursor: "pointer",
+    backgroundColor: "transparent",
+    border: "none",
+    outline: "none",
+    marginTop: "30px",
+    color: "dimgray",
+  },
+  app__logout: {
+    cursor: "pointer",
+    backgroundColor: "transparent",
+    border: "none",
+    outline: "none",
+    color: "dimgray",
+    marginLeft: "10px",
+  },
+})
 
 export default withRouter(App)

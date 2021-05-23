@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
-import styels from "./SignIn.module.css"
+import { makeStyles } from "@material-ui/styles"
 import { Button, FormControl, TextField, Typography } from "@material-ui/core"
 import { auth } from "../firebase"
 import { useHistory, withRouter } from "react-router-dom"
@@ -10,6 +10,7 @@ const SignUp: React.FC = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const history = useHistory()
+  const classes = useStyle()
   const { signup } = useContext(AuthContext)
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const SignUp: React.FC = () => {
   }, [history])
 
   return (
-    <div className={styels.login__root}>
+    <div className={classes.login__root}>
       <h1>SignUp</h1>
       <br />{" "}
       <FormControl>
@@ -77,5 +78,21 @@ const SignUp: React.FC = () => {
     </div>
   )
 }
+
+const useStyle = makeStyles({
+  login__root: {
+    fontFamily: "serif",
+    color: "dimgray",
+    minHeight: "80vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "50px",
+    "& span": {
+      cursor: "pointer",
+    },
+  },
+})
 
 export default withRouter(SignUp)

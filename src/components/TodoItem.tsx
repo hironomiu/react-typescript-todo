@@ -3,7 +3,6 @@ import { db } from "../firebase"
 import { ListItem, Grid, TextField, FormControl } from "@material-ui/core"
 import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined"
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined"
-import styles from "./TodoItem.module.css"
 import { makeStyles } from "@material-ui/styles"
 
 interface PROPS {
@@ -12,14 +11,6 @@ interface PROPS {
   title: string
   body: string
 }
-
-const useStyle = makeStyles({
-  list: {
-    justifyContent: "center",
-    marginTop: 30,
-    marginBottom: 30,
-  },
-})
 
 const TodoItem: React.FC<PROPS> = (props) => {
   const [title, setTitle] = useState(props.title)
@@ -65,14 +56,30 @@ const TodoItem: React.FC<PROPS> = (props) => {
           ></TextField>
         </Grid>
       </FormControl>
-      <button className={styles.todoitem__icon} onClick={() => editTodo()}>
+      <button className={classes.todoitem__icon} onClick={() => editTodo()}>
         <EditOutlinedIcon />
       </button>
-      <button className={styles.todoitem__icon} onClick={() => deleteTodo()}>
+      <button className={classes.todoitem__icon} onClick={() => deleteTodo()}>
         <DeleteOutlineOutlinedIcon />
       </button>
     </ListItem>
   )
 }
+
+const useStyle = makeStyles({
+  list: {
+    justifyContent: "center",
+    marginTop: 30,
+    marginBottom: 30,
+  },
+  todoitem__icon: {
+    cursor: "pointer",
+    backgroundColor: "transparent",
+    border: "none",
+    outline: "none",
+    marginLeft: "2px",
+    color: "dimgray",
+  },
+})
 
 export default TodoItem
