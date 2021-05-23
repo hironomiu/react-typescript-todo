@@ -7,7 +7,7 @@ import {
 import TodoItem from "./TodoItem"
 import { db, auth } from "../utils/firebase"
 import { makeStyles } from "@material-ui/styles"
-import { useHistory, withRouter } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { AuthContext } from "../contexts/auth"
 
 const App: React.FC = () => {
@@ -94,7 +94,6 @@ const App: React.FC = () => {
   }
 
   return (
-    // <div className={classes.app__root}>
     <div className={classes.app__root}>
       <h1 className={classes.app__title}>
         {profile?.nickname}'s ToDo App
@@ -206,4 +205,4 @@ const useStyle = makeStyles({
   },
 })
 
-export default withRouter(App)
+export default App

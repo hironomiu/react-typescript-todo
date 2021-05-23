@@ -1,4 +1,4 @@
-import { isValidEmailFormat } from "../utils/validation"
+import { isValidEmailFormat } from "./validation"
 
 test("isValidEmailFormat truthy", () => {
   expect(isValidEmailFormat("hoge@hoge.com")).toBeTruthy()

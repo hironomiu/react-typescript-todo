@@ -5,7 +5,6 @@ import { Route, BrowserRouter } from "react-router-dom"
 import App from "./components/App"
 import SignIn from "./components/SignIn"
 import SignUp from "./components/SignUp"
-
 import { AuthProvider } from "./contexts/auth"
 
 ReactDOM.render(
