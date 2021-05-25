@@ -45,15 +45,15 @@ $ npm test
 $ yarn test
 ```
 
-## deploy
+## Firebase deploy
 
-deploy build file
+deploy hosting build file
 
 ```
 $ npx firebase deploy --only hosting
 ```
 
-deploy .rules file
+deploy firestore .rules file
 
 ```
 $ npx firebase deploy --only firestore:rules
