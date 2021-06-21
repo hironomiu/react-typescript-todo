@@ -10,28 +10,28 @@ import { makeStyles } from "@material-ui/styles"
 import { useHistory } from "react-router-dom"
 import { AuthContext } from "../contexts/auth"
 
-const App: React.FC = () => {
-  interface MyTodos {
-    uid: string
-    id: string
-    title: string
-    body: string
-  }
+interface MyTodos {
+  uid: string
+  id: string
+  title: string
+  body: string
+}
 
+interface MyProfile {
+  created_at: {}
+  email: string
+  nickname: string
+  uid: string
+  updated_at: {}
+}
+
+const App: React.FC = () => {
   const [todos, setTodos] = useState<MyTodos[]>([
     { uid: "", id: "", title: "", body: "" },
   ])
 
   const [title, setTitle] = useState("")
   const [body, setBody] = useState("")
-
-  interface MyProfile {
-    created_at: {}
-    email: string
-    nickname: string
-    uid: string
-    updated_at: {}
-  }
 
   const [profile, setProfile] = useState<MyProfile>({
     created_at: {},
