@@ -17,29 +17,25 @@ $ yarn -v
 
 ## setup
 
-```
-$ npm install
-```
+`yarn`をインストールしていない場合は全て`npm`で代用すること
 
 ```
 $ yarn install
 ```
 
-## build
+## run
 
 ```
-$ npm run build
+$ yarn start
 ```
+
+## build
 
 ```
 $ yarn build
 ```
 
 ## test
-
-```
-$ npm test
-```
 
 ```
 $ yarn test
